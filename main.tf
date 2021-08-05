@@ -13,7 +13,7 @@ provider "spotify" {
 
 data "spotify_search_track" "by_artist" {
   artists = ["Thank You Scientist"]
-  album = "Terraformer"
+  album   = "Terraformer"
 }
 
 resource "spotify_playlist" "playlist" {
@@ -21,7 +21,7 @@ resource "spotify_playlist" "playlist" {
   description = "Playlist created by Terraform. Terraformers only 🙅🏼‍♀️"
   public      = true
 
-  tracks      = data.spotify_search_track.by_artist.tracks[*].id
+  tracks = data.spotify_search_track.by_artist.tracks[*].id
 }
 
 
